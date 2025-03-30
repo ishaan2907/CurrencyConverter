@@ -1,0 +1,60 @@
+<h1 class="mt-5">Check the current conversion rate for your Currency</h1>
+<form action="" class="Converter ms-5 me-5 mt-5">
+  <div class="col-4 mb-3 mx-auto">
+    <label for="exampleInput1" class="form-label mt-5  ">Enter your Amount</label>
+    <input type="number" class="form-control mb-2" name="amount"
+      [(ngModel)]="amount" id="amount" placeholder="Enter the Amount">
+    <select [(ngModel)]="from" class="form-select mb-2" name="from_currency" id="from_currency">
+      <option value="">From</option>
+      <option value="INR">Indian Rupee (INR)</option>
+      <option value="AUD">Australian Dollar (AUD)</option>
+      <option value="AZN">Azerbaijanian Manat (AZN)</option>
+      <option value="BDT">Bangladesh Taka (BDT)</option>
+      <option value="BTN">Bhutanese Ngultrum (BTN)</option>
+      <option value="CNY">Chinese Yuan (CNY)</option>
+      <option value="CAD">Canadian Dollar (CAD)</option>
+      <option value="EUR">Europe (EUR)</option>
+      <option value="HKD">Hong Kong Dollar (HKD)</option>
+      <option value="IDR">Indonesian Rupiah (IDR)</option>
+      <option value="MYR">Malaysian Ringgit (MYR)</option>
+      <option value="MVR">Maldives Rufiyaa (MVR)</option>
+      <option value="NPR">Nepal Rupee (NPR)</option>
+      <option value="SGD">Singapore Dollar (SGD)</option>
+      <option value="LKR">Sri Lanka Rupee (LKR)</option>
+      <option value="THB">Thailand Baht (THB)</option>
+      <option value="AED">UAE Dirham (AED)</option>
+      <option value="GBP">UK Pound (GBP)</option>
+      <option value="USD">US Dollar (USD)</option>
+      <option value="VND">Vietnam Dong (VND)</option>
+    </select>
+    <select [(ngModel)]="to" class="form-select" name="to_currency" id="to_currency">
+      <option value="">To</option>
+      <option value="INR">Indian Rupee (INR)</option>
+      <option value="AUD">Australian Dollar (AUD)</option>
+      <option value="AZN">Azerbaijanian Manat (AZN)</option>
+      <option value="BDT">Bangladesh Taka (BDT)</option>
+      <option value="BTN">Bhutanese Ngultrum (BTN)</option>
+      <option value="CAD">Canadian Dollar (CAD)</option>
+      <option value="CNY">Chinese Yuan (CNY)</option>
+      <option value="EUR">Europe (EUR)</option>
+      <option value="HKD">Hong Kong Dollar (HKD)</option>
+      <option value="IDR">Indonesian Rupiah (IDR)</option>
+      <option value="MYR">Malaysian Ringgit (MYR)</option>
+      <option value="MVR">Maldives Rufiyaa (MVR)</option>
+      <option value="NPR">Nepal Rupee (NPR)</option>
+      <option value="SGD">Singapore Dollar (SGD)</option>
+      <option value="LKR">Sri Lanka Rupee (LKR)</option>
+      <option value="THB">Thailand Baht (THB)</option>
+      <option value="AED">UAE Dirham (AED)</option>
+      <option value="GBP">UK Pound (GBP)</option>
+      <option value="USD">US Dollar (USD)</option>
+      <option value="VND">Vietnam Dong (VND)</option>
+    </select>
+    <br><br>
+    <div class="text-center">
+      <button class="Onsubmit btn btn-success" *ngIf="!visible" (click)="convert(amount, from, to)">Convert</button>
+      <div class="result fs-3 fw-bold mb-2" *ngIf="visible">Result: {{ result | currency: to}}</div>
+      <button class="Onsubmit btn btn-secondary" *ngIf="visible" (click)="reset()">Reset</button>
+    </div>
+  </div>
+</form>
